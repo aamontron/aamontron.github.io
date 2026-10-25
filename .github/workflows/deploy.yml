@@ -20,11 +20,14 @@ jobs:
         run: npm ci
 
       - name: Build Production
-        run: npx ng build --configuration=production --base-href=/aamontron-site/
+        run: npx ng build --configuration=production --base-href=/
+
+      - name: Add 404 fallback for SPA routes
+        run: cp ./dist/aamontron-site/browser/index.html ./dist/aamontron-site/browser/404.html
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/aamontron-site
+          publish_dir: ./dist/aamontron-site/browser
           enable_jekyll: false
