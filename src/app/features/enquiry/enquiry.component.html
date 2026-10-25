@@ -1,0 +1,86 @@
+<div class="container enquiry-page">
+  <div class="enquiry-card-wrapper" *ngIf="card">
+    <div class="enquiry-header">
+      <h1>WhatsApp এনকোয়ারি ফর্ম</h1>
+      <p>আপনার পছন্দের কার্ডের জন্য সরাসরি WhatsApp-এ বার্তা তৈরি করুন</p>
+    </div>
+
+    <div class="selected-card-summary" *ngIf="!isSubmitted">
+      <img [src]="card.imageUrl" [alt]="card.titleBengali" />
+      <div>
+        <span class="code">{{ card.code }}</span>
+        <h3>{{ card.titleBengali }}</h3>
+        <p class="price">{{ card.priceEstimate }}</p>
+      </div>
+    </div>
+
+    <!-- Form View -->
+    <form [formGroup]="enquiryForm" (ngSubmit)="onSubmit()" class="enquiry-form" *ngIf="!isSubmitted">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>আপনার নাম</mat-label>
+        <input matInput formControlName="customerName" placeholder="যেমন: সুমিত রায়" required />
+        <mat-error *ngIf="enquiryForm.get('customerName')?.hasError('required')">নাম লেখা বাধ্যতামূলক</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>মোবাইল নম্বর (WhatsApp)</mat-label>
+        <input matInput formControlName="customerPhone" placeholder="যেমন: 9830000000" required />
+        <mat-error *ngIf="enquiryForm.get('customerPhone')?.hasError('required')">ফোন নম্বর বাধ্যতামূলক</mat-error>
+      </mat-form-field>
+
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>অনুষ্ঠানের আনুমানিক তারিখ</mat-label>
+          <input matInput formControlName="eventDate" placeholder="যেমন: ২৫শে বৈশাখ, ১৪৩২" required />
+          <mat-error>তারিখ দেওয়া আবশ্যক</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>কার্ডের পরিমাণ (পিস)</mat-label>
+          <input matInput type="number" formControlName="quantity" min="10" required />
+          <mat-error>কমপক্ষে ১০ পিস</mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>বিশেষ প্রয়োজন বা কাস্টম রিকোয়ারমেন্ট (ঐচ্ছিক)</mat-label>
+        <textarea matInput formControlName="customNotes" rows="3" placeholder="যেমন: ফন্টের সাইজ বা লেখার ধরণ সম্পর্কে কোনো বিশেষ নির্দেশ থাকলে লিখুন..."></textarea>
+      </mat-form-field>
+
+      <div class="form-actions">
+        <button mat-flat-button color="primary" type="submit" [disabled]="enquiryForm.invalid" class="btn-submit">
+          <mat-icon>chat</mat-icon> WhatsApp-এ মেসেজ তৈরি ও পাঠান
+        </button>
+      </div>
+    </form>
+
+    <!-- Success / Handoff State -->
+    <div class="success-state" *ngIf="isSubmitted">
+      <mat-icon class="success-icon">check_circle</mat-icon>
+      <h2>আপনার এনকোয়ারি প্রস্তুত!</h2>
+      <p class="success-msg">
+        WhatsApp খুলে গেছে এবং আপনার বার্তাটি স্বয়ংক্রিয়ভাবে প্রিলোড হয়ে গেছে। দয়া করে WhatsApp-এ <strong>Send</strong> বটন প্রেস করুন।
+      </p>
+
+      <div class="popup-warning" *ngIf="popupBlocked">
+        <mat-icon>warning</mat-icon>
+        <span>আপনার ব্রাউজারে পপ-আপ ব্লক করা থাকতে পারে। নিচে সরাসরি লিঙ্কে ক্লিক করে WhatsApp ওপেন করুন:</span>
+      </div>
+
+      <div class="success-actions">
+        <a mat-flat-button color="primary" [href]="whatsAppUrl" target="_blank" class="btn-wa-direct">
+          <mat-icon>open_in_new</mat-icon> WhatsApp এ আবার খুলুন
+        </a>
+        <a mat-stroked-button routerLink="/catalogue">
+          আরও কার্ড দেখুন
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container empty-detail" *ngIf="!card">
+    <mat-icon>error_outline</mat-icon>
+    <h2>কার্ড নির্বাচন করা হয়নি</h2>
+    <button mat-flat-button color="primary" routerLink="/catalogue">ক্যাটালগ থেকে কার্ড বেছে নিন</button>
+  </div>
+</div>

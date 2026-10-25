@@ -1,0 +1,108 @@
+<div class="hero-section">
+  <div class="container hero-container">
+    <div class="hero-text">
+      <span class="badge">প্রিমিয়াম বাঙালি নিমন্ত্রণ পত্র</span>
+      <h1>আপনার জীবনের বিশেষ দিনটিকে রাঙিয়ে তুলুন নান্দনিক নিমন্ত্রণে</h1>
+      <p>বিবাহ, অন্নপ্রাশন, জন্মদিন কিংবা গৃহপ্রবেশ—যেকোনো অনুষ্ঠানের জন্য আমাদের রয়েছে ঐতিহ্যবাহী ও আধুনিক ডিজিটাল কার্ডের বিশাল সংগ্রহ। সরাসরি WhatsApp-এর মাধ্যমে খুব সহজেই অর্ডার করুন।</p>
+      <div class="hero-actions">
+        <a mat-flat-button color="primary" routerLink="/catalogue" class="btn-explore">
+          <mat-icon>grid_view</mat-icon> ক্যাটালগ দেখুন
+        </a>
+        <a mat-stroked-button routerLink="/catalogue" class="btn-whatsapp-cta">
+          <mat-icon>chat</mat-icon> WhatsApp এনকোয়ারি
+        </a>
+      </div>
+    </div>
+    <div class="hero-banner-image">
+      <div class="card-stack-preview">
+        <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80" alt="Wedding Card Preview" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Categories Section -->
+<div class="container section">
+  <div class="section-header">
+    <h2>অনুষ্ঠানের ক্যাটেগরি</h2>
+    <p>আপনার পছন্দের অনুষ্ঠান বেছে নিন</p>
+  </div>
+
+  <div class="categories-grid">
+    <a *ngFor="let cat of categories$ | async" [routerLink]="['/catalogue']" [queryParams]="{category: cat.id}" class="category-card">
+      <mat-icon class="cat-icon">{{ cat.icon }}</mat-icon>
+      <h3>{{ cat.nameBengali }}</h3>
+      <span class="cat-en">{{ cat.nameEnglish }}</span>
+    </a>
+  </div>
+</div>
+
+<!-- Featured Cards Section -->
+<div class="featured-wrapper">
+  <div class="container section">
+    <div class="section-header">
+      <h2>বিশেষ আকর্ষণ ও প্রিমিয়াম ডিজাইন</h2>
+      <p>সবচেয়ে জনপ্রিয় এবং নতুন ডিজাইন করা কার্ডসমূহ</p>
+    </div>
+
+    <div class="cards-grid">
+      <mat-card class="invitation-card" *ngFor="let card of featuredCards$ | async">
+        <div class="card-image-wrapper">
+          <img mat-card-image [src]="card.imageUrl" [alt]="card.titleBengali" />
+          <span class="badge-tag" *ngIf="card.isNew">নতুন</span>
+          <span class="badge-tag featured" *ngIf="card.isFeatured && !card.isNew">বিশেষ</span>
+        </div>
+        <mat-card-content class="card-body">
+          <span class="card-code">{{ card.code }}</span>
+          <h3>{{ card.titleBengali }}</h3>
+          <p class="price">{{ card.priceEstimate }}</p>
+        </mat-card-content>
+        <mat-card-actions class="card-footer">
+          <a mat-button color="primary" [routerLink]="['/card', card.id]">
+            <mat-icon>visibility</mat-icon> বিস্তারিত দেখুন
+          </a>
+          <a mat-flat-button color="accent" [routerLink]="['/enquiry', card.id]">
+            <mat-icon>chat</mat-icon> এনকোয়ারি
+          </a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div class="center-action">
+      <a mat-flat-button color="primary" routerLink="/catalogue" class="btn-all-designs">
+        সকল ডিজাইন একসঙ্গে দেখুন <mat-icon>arrow_forward</mat-icon>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- How it works section -->
+<div class="container section workflow-section">
+  <div class="section-header">
+    <h2>কীভাবে অর্ডার বা এনকোয়ারি করবেন?</h2>
+    <p>মাত্র ৪টি সহজ ধাপে আপনার কাঙ্ক্ষিত নিমন্ত্রণ পত্র তৈরি করুন</p>
+  </div>
+
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-number">১</div>
+      <h3>ডিজাইন পছন্দ করুন</h3>
+      <p>ক্যাটালগ থেকে আপনার পছন্দের কার্ডের ডিজাইন ও কোড বেছে নিন।</p>
+    </div>
+    <div class="step-card">
+      <div class="step-number">২</div>
+      <h3>তথ্য দিন</h3>
+      <p>অনুষ্ঠানের তারিখ, নাম ও প্রয়োজনীয় পরিমাণ ফর্মের মাধ্যমে লিখুন।</p>
+    </div>
+    <div class="step-card">
+      <div class="step-number">৩</div>
+      <h3>WhatsApp-এ পাঠান</h3>
+      <p>বটন প্রেস করলেই স্বয়ংক্রিয়ভাবে WhatsApp মেসেজ তৈরি হয়ে যাবে।</p>
+    </div>
+    <div class="step-card">
+      <div class="step-number">৪</div>
+      <h3>নিশ্চিত করুন</h3>
+      <p>আমাদের টিম আপনার সাথে যোগাযোগ করে ফাইনাল প্রিন্ট নিশ্চিত করবে।</p>
+    </div>
+  </div>
+</div>

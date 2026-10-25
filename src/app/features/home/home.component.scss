@@ -1,0 +1,336 @@
+@use '../../../styles/variables' as *;
+
+.hero-section {
+  background: linear-gradient(135deg, #fff5f5 0%, #fffbf0 100%);
+  padding: 60px 0;
+  border-bottom: 1px solid $border-color;
+
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+
+  .hero-text {
+    .badge {
+      display: inline-block;
+      background-color: $gold-light;
+      color: $crimson-dark;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $crimson-dark;
+      line-height: 1.3;
+      margin-bottom: 20px;
+
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: $muted-text;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+
+      @media (max-width: 900px) {
+        justify-content: center;
+      }
+
+      @media (max-width: 500px) {
+        flex-direction: column;
+      }
+
+      .btn-explore {
+        background-color: $crimson-primary !important;
+        color: $white !important;
+        font-weight: 600;
+        padding: 0 24px;
+        height: 44px;
+      }
+
+      .btn-whatsapp-cta {
+        border-color: $crimson-primary;
+        color: $crimson-primary;
+        font-weight: 600;
+        height: 44px;
+      }
+    }
+  }
+
+  .hero-banner-image {
+    display: flex;
+    justify-content: center;
+
+    .card-stack-preview {
+      width: 320px;
+      height: 440px;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(139, 0, 0, 0.15);
+      overflow: hidden;
+      border: 6px solid $white;
+      transform: rotate(2deg);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: rotate(0deg);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.section {
+  padding: 60px 0;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+
+    h2 {
+      font-size: 2rem;
+      color: $crimson-dark;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: $muted-text;
+      font-size: 1rem;
+    }
+  }
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+
+  .category-card {
+    background: $white;
+    padding: 24px 16px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid $border-color;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+
+    &:hover {
+      transform: translateY(-4px);
+      border-color: $gold-accent;
+      box-shadow: 0 8px 24px rgba(139, 0, 0, 0.08);
+
+      .cat-icon {
+        color: $crimson-primary;
+        transform: scale(1.1);
+      }
+    }
+
+    .cat-icon {
+      font-size: 2.5rem;
+      height: 2.5rem;
+      width: 2.5rem;
+      color: $gold-accent;
+      margin-bottom: 12px;
+      transition: transform 0.2s;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      color: $charcoal-text;
+      margin-bottom: 4px;
+    }
+
+    .cat-en {
+      font-size: 0.8rem;
+      color: $muted-text;
+    }
+  }
+}
+
+.featured-wrapper {
+  background-color: #f3efe6;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+
+  .invitation-card {
+    background: $white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid $border-color;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .card-image-wrapper {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.05);
+      }
+
+      .badge-tag {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background-color: $crimson-primary;
+        color: $white;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 600;
+
+        &.featured {
+          background-color: $gold-accent;
+          color: $charcoal-text;
+        }
+      }
+    }
+
+    .card-body {
+      padding: 16px;
+      flex-grow: 1;
+
+      .card-code {
+        font-size: 0.75rem;
+        color: $muted-text;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      h3 {
+        font-size: 1.15rem;
+        color: $charcoal-text;
+        margin: 6px 0 10px;
+      }
+
+      .price {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: $crimson-primary;
+      }
+    }
+
+    .card-footer {
+      padding: 12px 16px;
+      border-top: 1px solid $border-color;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      a {
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      button, a[mat-flat-button] {
+        background-color: $gold-accent !important;
+        color: $charcoal-text !important;
+      }
+    }
+  }
+}
+
+.center-action {
+  text-align: center;
+
+  .btn-all-designs {
+    background-color: $crimson-primary !important;
+    color: $white !important;
+    font-weight: 600;
+    padding: 0 28px;
+    height: 48px;
+    font-size: 1rem;
+  }
+}
+
+.workflow-section {
+  background: $white;
+  border-radius: 16px;
+  padding: 40px 24px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: 1px solid $border-color;
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+
+    .step-card {
+      text-align: center;
+      padding: 20px;
+
+      .step-number {
+        width: 48px;
+        height: 48px;
+        background-color: $gold-light;
+        color: $crimson-primary;
+        font-size: 1.25rem;
+        font-weight: 700;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        color: $charcoal-text;
+        margin-bottom: 8px;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: $muted-text;
+      }
+    }
+  }
+}

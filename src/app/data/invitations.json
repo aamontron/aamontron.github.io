@@ -1,0 +1,111 @@
+[
+  {
+    "id": "card-1",
+    "titleBengali": "রাজকীয় রত্নমালা বিবাহ কার্ড",
+    "titleEnglish": "Royal Ratnamala Wedding Card",
+    "code": "AMN-W01",
+    "categoryId": "cat-1",
+    "tags": ["royal", "gold", "traditional", "wedding", "red"],
+    "priceEstimate": "₹৪৫ / কার্ড",
+    "imageUrl": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+    ],
+    "isFeatured": true,
+    "isNew": true,
+    "dimensions": "9 x 6.5 inch",
+    "paperType": "300 GSM Art Paper + Foil",
+    "description": "সনাতন বাঙালি বিবাহ ও রিসেপশনের জন্য বিশেষভাবে নকশা করা প্রিমিয়াম গোল্ড ফয়েল প্রিন্টসহ রাজকীয় আমন্ত্রণপত্র।"
+  },
+  {
+    "id": "card-2",
+    "titleBengali": "সোনালী সুপ্রভাত অন্নপ্রাশন কার্ড",
+    "titleEnglish": "Golden Ray Rice Ceremony Card",
+    "code": "AMN-R01",
+    "categoryId": "cat-2",
+    "tags": ["rice ceremony", "baby", "gold", "yellow", "traditional"],
+    "priceEstimate": "₹৩৫ / কার্ড",
+    "imageUrl": "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80"
+    ],
+    "isFeatured": true,
+    "isNew": false,
+    "dimensions": "8 x 6 inch",
+    "paperType": "250 GSM Textured Paper",
+    "description": "ছোট সোনামণির ভাতসংকলন বা অন্নপ্রাশন অনুষ্ঠানের জন্য মিষ্টি ও ঐতিহ্যবাহী নকশার কার্ড।"
+  },
+  {
+    "id": "card-3",
+    "titleBengali": "কুঞ্জলতা জন্মদিন আমন্ত্রণ",
+    "titleEnglish": "Kunjalata Floral Birthday Card",
+    "code": "AMN-B01",
+    "categoryId": "cat-3",
+    "tags": ["birthday", "floral", "elegant", "party"],
+    "priceEstimate": "₹৩০ / কার্ড",
+    "imageUrl": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80"
+    ],
+    "isFeatured": true,
+    "isNew": true,
+    "dimensions": "7 x 7 inch",
+    "paperType": "280 GSM Metallic Paper",
+    "description": "জন্মদিনের আনন্দ উদযাপনে রঙিন ফুলের মোটিফ দিয়ে সাজানো আধুনিক কার্ড।"
+  },
+  {
+    "id": "card-4",
+    "titleBengali": "শুভ গৃহপ্রবেশ মঙ্গলঘট কার্ড",
+    "titleEnglish": "Mangalghat Griha Pravesh Card",
+    "code": "AMN-G01",
+    "categoryId": "cat-5",
+    "tags": ["griha pravesh", "housewarming", "traditional", "mangalghat"],
+    "priceEstimate": "₹৪০ / কার্ড",
+    "imageUrl": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+    ],
+    "isFeatured": false,
+    "isNew": false,
+    "dimensions": "8.5 x 5.5 inch",
+    "paperType": "300 GSM Matte Finish",
+    "description": "নতুন গৃহে প্রবেশের শুভক্ষণে আত্মীয়-স্বজনদের আমন্ত্রণ জানানোর জন্য মঙ্গলঘট খচিত ঐতিহ্যবাহী কার্ড।"
+  },
+  {
+    "id": "card-5",
+    "titleBengali": "স্বর্ণালী বৈশাখী নববর্ষ আমন্ত্রণ",
+    "titleEnglish": "Swarnali Pohela Boishakh Card",
+    "code": "AMN-P01",
+    "categoryId": "cat-7",
+    "tags": ["boishakh", "bengali new year", "red-white", "traditional"],
+    "priceEstimate": "₹২৫ / কার্ড",
+    "imageUrl": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80"
+    ],
+    "isFeatured": true,
+    "isNew": true,
+    "dimensions": "8 x 6 inch",
+    "paperType": "220 GSM Eco Paper",
+    "description": "পহেলা বৈশাখ বা বাংলা নববর্ষের অনুষ্ঠানে লাল-সাদার মেলবন্ধনে আকর্ষণীয় নিমন্ত্রণপত্র।"
+  },
+  {
+    "id": "card-6",
+    "titleBengali": "সুবর্ণ জয়ন্তী বিবাহবার্ষিকী",
+    "titleEnglish": "Golden Anniversary Card",
+    "code": "AMN-A01",
+    "categoryId": "cat-4",
+    "tags": ["anniversary", "golden", "luxury"],
+    "priceEstimate": "₹৫০ / কার্ড",
+    "imageUrl": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80"
+    ],
+    "isFeatured": false,
+    "isNew": false,
+    "dimensions": "9 x 6 inch",
+    "paperType": "350 GSM Pearl Finish",
+    "description": "বিবাহবার্ষিকীর বিশেষ উদযাপনের জন্য ক্লাসিক ও ল্যান্ডস্কেপ প্রিমিয়াম কার্ড।"
+  }
+]

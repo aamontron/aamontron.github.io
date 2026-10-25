@@ -1,0 +1,82 @@
+[
+  {
+    "id": "cat-1",
+    "nameBengali": "বিবাহ",
+    "nameEnglish": "Wedding",
+    "slug": "wedding",
+    "icon": "favorite",
+    "displayOrder": 1
+  },
+  {
+    "id": "cat-2",
+    "nameBengali": "অন্নপ্রাশন",
+    "nameEnglish": "Rice Ceremony",
+    "slug": "rice-ceremony",
+    "icon": "child_care",
+    "displayOrder": 2
+  },
+  {
+    "id": "cat-3",
+    "nameBengali": "শুভ জন্মদিন",
+    "nameEnglish": "Birthday",
+    "slug": "birthday",
+    "icon": "cake",
+    "displayOrder": 3
+  },
+  {
+    "id": "cat-4",
+    "nameBengali": "বিবাহ বার্ষিকী",
+    "nameEnglish": "Anniversary",
+    "slug": "anniversary",
+    "icon": "celebration",
+    "displayOrder": 4
+  },
+  {
+    "id": "cat-5",
+    "nameBengali": "গৃহপ্রবেশ",
+    "nameEnglish": "Griha Pravesh",
+    "slug": "griha-pravesh",
+    "icon": "home",
+    "displayOrder": 5
+  },
+  {
+    "id": "cat-6",
+    "nameBengali": "উপনয়ন",
+    "nameEnglish": "Sacred Thread",
+    "slug": "sacred-thread",
+    "icon": "auto_awesome",
+    "displayOrder": 6
+  },
+  {
+    "id": "cat-7",
+    "nameBengali": "পহেলা বৈশাখ",
+    "nameEnglish": "Pohela Boishakh",
+    "slug": "pohela-boishakh",
+    "icon": "festival",
+    "displayOrder": 7
+  },
+  {
+    "id": "cat-8",
+    "nameBengali": "সংবর্ধনা",
+    "nameEnglish": "Reception",
+    "slug": "reception",
+    "icon": "military_tech",
+    "displayOrder": 8
+  },
+  {
+    "id": "cat-9",
+    "nameBengali": "সাংস্কৃতিক অনুষ্ঠান",
+    "nameEnglish": "Cultural Event",
+    "slug": "theater_comedy",
+    "icon": "theater_comedy",
+    "displayOrder": 9
+  },
+  {
+    "id": "cat-10",
+    "nameBengali": "অন্যান্য অনুষ্ঠান",
+    "nameEnglish": "Others",
+    "slug": "others",
+    "icon": "event",
+    "displayOrder": 10
+  }
+]

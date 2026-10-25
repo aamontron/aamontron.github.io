@@ -1,0 +1,53 @@
+<mat-toolbar color="primary" class="navbar">
+  <div class="container navbar-content">
+    <a routerLink="/" class="brand-logo">
+      <span class="logo-bengali">আমন্ত্রণ</span>
+      <span class="logo-english">Aamontron</span>
+    </a>
+
+    <nav class="nav-links">
+      <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>home</mat-icon> হোম
+      </a>
+      <a mat-button routerLink="/catalogue" routerLinkActive="active">
+        <mat-icon>grid_view</mat-icon> ক্যাটালগ
+      </a>
+    </nav>
+
+    <div class="nav-cta">
+      <a mat-flat-button color="accent" routerLink="/catalogue">
+        <mat-icon>explore</mat-icon> ডিজাইন দেখুন
+      </a>
+    </div>
+  </div>
+</mat-toolbar>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <div class="container footer-content">
+    <div class="footer-col">
+      <h3>আমন্ত্রণ (Aamontron)</h3>
+      <p>আপনার জীবনের প্রতিটি আনন্দের মুহূর্তকে আরও সুন্দর করে তুলতে ঐতিহ্যবাহী ও আধুনিক নিমন্ত্রণ পত্রের সংগ্রহ।</p>
+    </div>
+    <div class="footer-col">
+      <h4>দ্রুত লিঙ্ক</h4>
+      <ul>
+        <li><a routerLink="/">হোম পেজ</a></li>
+        <li><a routerLink="/catalogue">সকল কার্ডের ক্যাটালগ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>যোগাযোগ</h4>
+      <p><mat-icon>phone</mat-icon> +৯১ ৯৮৩০০ ০০০০০</p>
+      <p><mat-icon>email</mat-icon> hello&#64;aamontron.in</p>
+      <p><mat-icon>location_on</mat-icon> কলকাতা, পশ্চিমবঙ্গ, ভারত</p>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Aamontron (আমন্ত্রণ). সর্বস্বত্ব সংরক্ষিত। GitHub Pages-এ প্রকাশিত।</p>
+  </div>
+</footer>

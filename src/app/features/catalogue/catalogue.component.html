@@ -1,0 +1,69 @@
+<div class="container catalogue-page">
+  <div class="catalogue-header">
+    <h1>নিমন্ত্রণ কার্ডের ক্যাটালগ</h1>
+    <p>আপনার বিশেষ আয়োজনের জন্য নিখুঁত ডিজাইন বেছে নিন</p>
+  </div>
+
+  <div class="filter-search-bar">
+    <mat-form-field appearance="outline" class="search-field">
+      <mat-label>কার্ড খুঁজুন (নাম বা কোড)</mat-label>
+      <input matInput [(ngModel)]="searchTerm" (ngModelChange)="onSearchChange()" placeholder="যেমন: রাজকীয়, AMN-W01" />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <!-- Category Filter Chips -->
+  <div class="category-filters">
+    <button
+      mat-stroked-button
+      class="filter-chip"
+      [class.active]="selectedCategoryId === 'all'"
+      (click)="filterByCategory('all')"
+    >
+      সকল ডিজাইন
+    </button>
+    <button
+      mat-stroked-button
+      class="filter-chip"
+      *ngFor="let cat of categories$ | async"
+      [class.active]="selectedCategoryId === cat.id"
+      (click)="filterByCategory(cat.id)"
+    >
+      {{ cat.nameBengali }}
+    </button>
+  </div>
+
+  <!-- Cards Grid -->
+  <div class="cards-grid" *ngIf="cards.length > 0">
+    <mat-card class="invitation-card" *ngFor="let card of cards">
+      <div class="card-image-wrapper">
+        <img mat-card-image [src]="card.imageUrl" [alt]="card.titleBengali" />
+        <span class="badge-tag" *ngIf="card.isNew">নতুন</span>
+        <span class="badge-tag featured" *ngIf="card.isFeatured && !card.isNew">বিশেষ</span>
+      </div>
+      <mat-card-content class="card-body">
+        <span class="card-code">{{ card.code }}</span>
+        <h3>{{ card.titleBengali }}</h3>
+        <p class="price">{{ card.priceEstimate }}</p>
+      </mat-card-content>
+      <mat-card-actions class="card-footer">
+        <a mat-button color="primary" [routerLink]="['/card', card.id]">
+          <mat-icon>visibility</mat-icon> বিস্তারিত
+        </a>
+        <a mat-flat-button color="accent" [routerLink]="['/enquiry', card.id]">
+          <mat-icon>chat</mat-icon> এনকোয়ারি
+        </a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <!-- Empty State -->
+  <div class="empty-state" *ngIf="cards.length === 0">
+    <mat-icon>search_off</mat-icon>
+    <h3>কোনো কার্ড পাওয়া যায়নি</h3>
+    <p>আপনার অনুসন্ধানের সাথে মিলে যায় এমন কোনো নিমন্ত্রণ কার্ড এই মুহূর্তে নেই। অন্য কীওয়ার্ড দিয়ে চেষ্টা করুন।</p>
+    <button mat-flat-button color="primary" (click)="selectedCategoryId = 'all'; searchTerm = ''; loadCards()">
+      সব কার্ড দেখুন
+    </button>
+  </div>
+</div>
