@@ -1,6 +1,5 @@
 export const environment = {
   production: true,
-  whatsAppNumber: '919830000000', // Production WhatsApp number
-  brandNameBengali: 'আমন্ত্রণ',
-  brandNameEnglish: 'Aamontron'
+  whatsAppNumber: '917488580857', // Production WhatsApp number +91 74885 80857
+  brandName: 'Aamontron'
 };
