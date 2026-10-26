@@ -24,9 +24,8 @@ jobs:
         run: npm ci
 
       - name: Build Production
-        # GitHub Pages serves this repo at /aamontron/, so assets must
-        # resolve from that sub-path, not the root.
-        run: npx ng build --configuration=production --base-href=/aamontron/
+        # aamontron.github.io is a root site repository served at /
+        run: npx ng build --configuration=production --base-href=/
 
       - name: Add 404 fallback for SPA routes
         run: cp ./dist/aamontron-site/browser/index.html ./dist/aamontron-site/browser/404.html
