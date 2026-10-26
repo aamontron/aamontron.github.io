@@ -66,7 +66,7 @@ export class EnquiryComponent implements OnInit {
       const formValue = this.enquiryForm.value;
       const payload = {
         cardId: this.card.code,
-        cardTitle: this.card.titleBengali,
+        cardTitle: this.card.title,
         category: this.card.categoryId,
         customerName: formValue.customerName,
         customerPhone: formValue.customerPhone,

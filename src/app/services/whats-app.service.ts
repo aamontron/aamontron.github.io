@@ -12,15 +12,15 @@ export class WhatsAppService {
 
   buildEnquiryUrl(payload: EnquiryPayload): string {
     const message =
-      `নমস্কার! আমি নিমন্ত্রণ কার্ড সম্পর্কে জানতে চাই (Aamontron):\n\n` +
-      `📋 কার্ড: *${payload.cardTitle}* (কোড: ${payload.cardId})\n` +
-      `🏷️ ক্যাটেগরি: ${payload.category}\n` +
-      `👤 নাম: ${payload.customerName}\n` +
-      `📞 ফোন: ${payload.customerPhone}\n` +
-      `📅 আনুমানিক তারিখ: ${payload.eventDate}\n` +
-      `🔢 পরিমাণ: ${payload.quantity} পিস\n` +
-      (payload.customNotes ? `💬 বিশেষ প্রয়োজন: ${payload.customNotes}\n\n` : `\n`) +
-      `দয়া করে বিস্তারিত মূল্য ও স্যাম্পল শেয়ার করুন। ধন্যবাদ!`;
+      `Hello! I'm enquiring about an invitation card (Aamontron):\n\n` +
+      `📋 Card: *${payload.cardTitle}* (Code: ${payload.cardId})\n` +
+      `🏷️ Category: ${payload.category}\n` +
+      `👤 Name: ${payload.customerName}\n` +
+      `📞 Phone: ${payload.customerPhone}\n` +
+      `📅 Event Date: ${payload.eventDate}\n` +
+      `🔢 Quantity: ${payload.quantity} pcs\n` +
+      (payload.customNotes ? `💬 Special Requirements: ${payload.customNotes}\n\n` : `\n`) +
+      `Please share detailed pricing and samples. Thank you!`;
 
     const encodedMessage = encodeURIComponent(message);
     return `https://wa.me/${this.whatsAppNumber}?text=${encodedMessage}`;

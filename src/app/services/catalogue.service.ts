@@ -40,8 +40,7 @@ export class CatalogueService {
       const term = searchTerm.toLowerCase().trim();
       result = result.filter(
         (card) =>
-          card.titleBengali.toLowerCase().includes(term) ||
-          card.titleEnglish.toLowerCase().includes(term) ||
+          card.title.toLowerCase().includes(term) ||
           card.code.toLowerCase().includes(term) ||
           card.tags.some((tag) => tag.toLowerCase().includes(term))
       );

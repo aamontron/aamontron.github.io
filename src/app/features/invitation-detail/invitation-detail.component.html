@@ -1,13 +1,13 @@
 <div class="container detail-page" *ngIf="card">
   <div class="breadcrumb">
-    <a routerLink="/catalogue">ক্যাটালগ</a> / <span>{{ card.titleBengali }}</span>
+    <a routerLink="/catalogue">Catalogue</a> / <span>{{ card.title }}</span>
   </div>
 
   <div class="detail-grid">
     <!-- Gallery Section -->
     <div class="gallery-column">
       <div class="main-image-wrapper">
-        <img [src]="selectedImage" [alt]="card.titleBengali" class="main-image" />
+        <img [src]="selectedImage" [alt]="card.title" class="main-image" />
       </div>
       <div class="thumbnail-grid" *ngIf="card.gallery.length > 1">
         <div
@@ -23,30 +23,30 @@
 
     <!-- Info Section -->
     <div class="info-column">
-      <span class="card-code">কার্ড কোড: {{ card.code }}</span>
-      <h1>{{ card.titleBengali }}</h1>
+      <span class="card-code">Card Code: {{ card.code }}</span>
+      <h1>{{ card.title }}</h1>
       <p class="title-en">{{ card.titleEnglish }}</p>
 
       <div class="price-box">
         <span class="price">{{ card.priceEstimate }}</span>
-        <span class="price-label">(মূল্য আনুমানিক)</span>
+        <span class="price-label">(Estimated Price)</span>
       </div>
 
       <mat-divider class="divider"></mat-divider>
 
       <div class="specs">
         <div class="spec-item">
-          <strong>মাপ (Dimensions):</strong>
+          <strong>Dimensions:</strong>
           <span>{{ card.dimensions }}</span>
         </div>
         <div class="spec-item">
-          <strong>কাগজ (Paper):</strong>
+          <strong>Paper:</strong>
           <span>{{ card.paperType }}</span>
         </div>
       </div>
 
       <div class="description">
-        <h3>বিস্তারিত বিবরণ</h3>
+        <h3>Detailed Description</h3>
         <p>{{ card.description }}</p>
       </div>
 
@@ -58,16 +58,16 @@
 
       <div class="actions">
         <a mat-flat-button color="accent" [routerLink]="['/enquiry', card.id]" class="btn-enquiry">
-          <mat-icon>chat</mat-icon> WhatsApp এনকোয়ারি করুন
+          <mat-icon>chat</mat-icon> Enquire on WhatsApp
         </a>
         <button mat-stroked-button class="btn-share">
-          <mat-icon>share</mat-icon> শেয়ার করুন
+          <mat-icon>share</mat-icon> Share
         </button>
       </div>
 
       <div class="help-text">
         <mat-icon>info</mat-icon>
-        <span>এনকোয়ারি বটনটি প্রেস করলে সরাসরি আমাদের WhatsApp-এ মেসেজ পাঠাতে পারবেন।</span>
+        <span>Press the Enquire button to send a direct message to our WhatsApp.</span>
       </div>
     </div>
   </div>
@@ -75,6 +75,6 @@
 
 <div class="container empty-detail" *ngIf="!card">
   <mat-icon>error_outline</mat-icon>
-  <h2>কার্ডটি খুঁজে পাওয়া যায়নি</h2>
-  <button mat-flat-button color="primary" routerLink="/catalogue">ক্যাটালগে ফিরে যান</button>
+  <h2>Card Not Found</h2>
+  <button mat-flat-button color="primary" routerLink="/catalogue">Return to Catalogue</button>
 </div>

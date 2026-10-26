@@ -1,7 +1,6 @@
 export interface Category {
   id: string;
-  nameBengali: string;
-  nameEnglish: string;
+  name: string;
   slug: string;
   icon: string;
   displayOrder: number;
@@ -9,7 +8,7 @@ export interface Category {
 
 export interface InvitationCard {
   id: string;
-  titleBengali: string;
+  title: string;
   titleEnglish: string;
   code: string;
   categoryId: string;

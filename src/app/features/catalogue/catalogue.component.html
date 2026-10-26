@@ -1,13 +1,13 @@
 <div class="container catalogue-page">
   <div class="catalogue-header">
-    <h1>নিমন্ত্রণ কার্ডের ক্যাটালগ</h1>
-    <p>আপনার বিশেষ আয়োজনের জন্য নিখুঁত ডিজাইন বেছে নিন</p>
+    <h1>Invitation Card Catalogue</h1>
+    <p>Choose the perfect design for your special event</p>
   </div>
 
   <div class="filter-search-bar">
     <mat-form-field appearance="outline" class="search-field">
-      <mat-label>কার্ড খুঁজুন (নাম বা কোড)</mat-label>
-      <input matInput [(ngModel)]="searchTerm" (ngModelChange)="onSearchChange()" placeholder="যেমন: রাজকীয়, AMN-W01" />
+      <mat-label>Search Cards (Name or Code)</mat-label>
+      <input matInput [(ngModel)]="searchTerm" (ngModelChange)="onSearchChange()" placeholder="e.g., Royal, AMN-W01" />
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
   </div>
@@ -20,7 +20,7 @@
       [class.active]="selectedCategoryId === 'all'"
       (click)="filterByCategory('all')"
     >
-      সকল ডিজাইন
+      All Designs
     </button>
     <button
       mat-stroked-button
@@ -29,7 +29,7 @@
       [class.active]="selectedCategoryId === cat.id"
       (click)="filterByCategory(cat.id)"
     >
-      {{ cat.nameBengali }}
+      {{ cat.name }}
     </button>
   </div>
 
@@ -37,21 +37,21 @@
   <div class="cards-grid" *ngIf="cards.length > 0">
     <mat-card class="invitation-card" *ngFor="let card of cards">
       <div class="card-image-wrapper">
-        <img mat-card-image [src]="card.imageUrl" [alt]="card.titleBengali" />
-        <span class="badge-tag" *ngIf="card.isNew">নতুন</span>
-        <span class="badge-tag featured" *ngIf="card.isFeatured && !card.isNew">বিশেষ</span>
+        <img mat-card-image [src]="card.imageUrl" [alt]="card.title" />
+        <span class="badge-tag" *ngIf="card.isNew">New</span>
+        <span class="badge-tag featured" *ngIf="card.isFeatured && !card.isNew">Featured</span>
       </div>
       <mat-card-content class="card-body">
         <span class="card-code">{{ card.code }}</span>
-        <h3>{{ card.titleBengali }}</h3>
+        <h3>{{ card.title }}</h3>
         <p class="price">{{ card.priceEstimate }}</p>
       </mat-card-content>
       <mat-card-actions class="card-footer">
         <a mat-button color="primary" [routerLink]="['/card', card.id]">
-          <mat-icon>visibility</mat-icon> বিস্তারিত
+          <mat-icon>visibility</mat-icon> Details
         </a>
         <a mat-flat-button color="accent" [routerLink]="['/enquiry', card.id]">
-          <mat-icon>chat</mat-icon> এনকোয়ারি
+          <mat-icon>chat</mat-icon> Enquire
         </a>
       </mat-card-actions>
     </mat-card>
@@ -60,10 +60,10 @@
   <!-- Empty State -->
   <div class="empty-state" *ngIf="cards.length === 0">
     <mat-icon>search_off</mat-icon>
-    <h3>কোনো কার্ড পাওয়া যায়নি</h3>
-    <p>আপনার অনুসন্ধানের সাথে মিলে যায় এমন কোনো নিমন্ত্রণ কার্ড এই মুহূর্তে নেই। অন্য কীওয়ার্ড দিয়ে চেষ্টা করুন।</p>
+    <h3>No Cards Found</h3>
+    <p>No invitation cards match your search at this moment. Try a different keyword.</p>
     <button mat-flat-button color="primary" (click)="selectedCategoryId = 'all'; searchTerm = ''; loadCards()">
-      সব কার্ড দেখুন
+      View All Cards
     </button>
   </div>
 </div>
