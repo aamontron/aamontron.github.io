@@ -7,6 +7,10 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    # peaceiris/actions-gh-pages needs write access to create/push the
+    # gh-pages branch; the default GITHUB_TOKEN is read-only.
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -20,7 +24,9 @@ jobs:
         run: npm ci
 
       - name: Build Production
-        run: npx ng build --configuration=production --base-href=/
+        # GitHub Pages serves this repo at /aamontron/, so assets must
+        # resolve from that sub-path, not the root.
+        run: npx ng build --configuration=production --base-href=/aamontron/
 
       - name: Add 404 fallback for SPA routes
         run: cp ./dist/aamontron-site/browser/index.html ./dist/aamontron-site/browser/404.html
