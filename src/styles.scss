@@ -1,1 +1,19 @@
 @use 'styles/variables' as *;
+@import '@angular/material/prebuilt-themes/rose-red.css';
+
+// Custom resets for Material styles
+.full-width {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.half-width {
+  width: calc(50% - 8px);
+  margin-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+  .half-width {
+    width: 100%;
+  }
+}
