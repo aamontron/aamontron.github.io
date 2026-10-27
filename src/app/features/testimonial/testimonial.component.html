@@ -1,0 +1,83 @@
+<section class="testimonial-section" role="region" [attr.aria-label]="heading()">
+  <div class="container testimonial-container">
+    <div class="testimonial-header">
+      <span class="testimonial-eyebrow">Customer Reviews</span>
+      <h2>{{ heading() }}</h2>
+      <p>{{ subheading() }}</p>
+    </div>
+
+    <div class="testimonial-stage"
+         (mouseenter)="pause()"
+         (mouseleave)="resume()"
+         (focusin)="pause()"
+         (focusout)="resume()"
+         (keydown)="pause()">
+
+      <button
+        class="nav-btn nav-prev"
+        type="button"
+        [attr.aria-label]="'Previous testimonial'"
+        [disabled]="!canGoPrev"
+        (click)="prev()"
+      >
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+
+      <div class="testimonial-track"
+           [style.transform]="'translateX(-' + activeIndex() * (100 / totalSlides) + '%)'"
+           role="list"
+           aria-live="polite">
+        <div class="testimonial-slide" *ngFor="let t of testimonials" role="listitem">
+          <mat-card class="testimonial-card">
+            <mat-card-content>
+              <mat-icon class="quote-mark">format_quote</mat-icon>
+              <p class="testimonial-text">{{ t.text }}</p>
+              <mat-divider></mat-divider>
+              <div class="testimonial-author">
+                <div class="avatar" [attr.title]="t.authorName">
+                  {{ initials(t.authorName) }}
+                </div>
+                <div class="author-info">
+                  <strong>{{ t.authorName }}</strong>
+                  <span class="date">{{ t.date }}</span>
+                  <span class="occasion" *ngIf="t.occasion">{{ t.occasion }}</span>
+                </div>
+              </div>
+              <div class="stars" *ngIf="t.rating" [attr.aria-label]="'Rated ' + t.rating + ' out of 5 stars'">
+                <mat-icon *ngFor="let s of fullStars(t.rating ?? 0)">star</mat-icon>
+                <mat-icon *ngIf="halfStar(t.rating ?? 0)">star_half</mat-icon>
+                <mat-icon *ngFor="let e of emptyStars(t.rating ?? 0)">star_outline</mat-icon>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+      <button
+        class="nav-btn nav-next"
+        type="button"
+        [attr.aria-label]="'Next testimonial'"
+        [disabled]="!canGoNext"
+        (click)="next()"
+      >
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+
+    <div class="testimonial-dots" role="tablist" [attr.aria-label]="'Testimonial page indicators'">
+      <button
+        *ngFor="let i of dots; let idx = index"
+        type="button"
+        role="tab"
+        class="dot"
+        [class.active]="activeIndex() === idx"
+        [attr.aria-selected]="activeIndex() === idx"
+        [attr.aria-controls]="'testimonial-slide-' + idx"
+        (click)="goTo(idx)"
+        (keydown)="onKeydown($event, idx)"
+      >
+        <span class="visually-hidden">Page {{ idx + 1 }}</span>
+      </button>
+    </div>
+  </div>
+</section>

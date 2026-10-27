@@ -7,11 +7,12 @@ import { MatCardModule } from '@angular/material/card';
 import { CatalogueService } from '../../services/catalogue.service';
 import { InvitationCard, Category } from '../../models/invitation.model';
 import { Observable } from 'rxjs';
+import { TestimonialComponent } from '../testimonial/testimonial.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, MatButtonModule, MatIconModule, MatCardModule],
+  imports: [CommonModule, RouterLink, MatButtonModule, MatIconModule, MatCardModule, TestimonialComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
